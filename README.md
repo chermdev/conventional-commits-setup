@@ -8,7 +8,7 @@ docs: [conventionalcommits.org](https://www.conventionalcommits.org)<br>
 
 Lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
 
-### Why Use Conventional Commits
+### Why use conventional commits
 
 - Automatically generating CHANGELOGs.
 - Automatically determining a semantic version bump (based on the types of commits landed).
@@ -86,7 +86,7 @@ Refs: #123
 
 ❌ _`commit message that is too large to fit in one commit, this means that the commit has too many changes to describe and you should split it into multiple commits or you require to use a multi-paragraph body and/or footers.`_
 
-## gitmoji
+## Gitmoji
 
 gitmoji: [gitmoji.dev](https://gitmoji.dev/)<br>
 
@@ -133,7 +133,7 @@ Using emojis on commit messages provides an easy way of identifying the purpose 
 | 💫    | Add or update animations and transitions.              |
 | 🙈    | Add or update a .gitignore file.                       |
 
-## Setup project in 3 steps 🎉
+## Installation: Setup project in 3 steps 🎉
 
 > Before starting, initialize a project if you dont have one with `npm init -y`.
 
@@ -167,6 +167,8 @@ module.exports = {
 };
 ```
 
+That's it! 🎉 you're ready to push ✨**conventional commits**✨
+
 ### pnpm:
 
 1. install dev dependencies.
@@ -196,6 +198,8 @@ module.exports = {
   extends: ["@commitlint/config-conventional"],
 };
 ```
+
+That's it! 🎉 you're ready to push ✨**conventional commits**✨
 
 ### ⭐ Recommendation: Install VSCode extension
 
