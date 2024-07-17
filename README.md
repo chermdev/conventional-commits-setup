@@ -43,7 +43,7 @@ feat(auth): ✨ <description>
 
 #### Good commits
 
-✅ _`chore: add shadcn package`_
+✅ _`build: add shadcn package`_
 
 ✅ _`feat: ✨ add login button`_
 
