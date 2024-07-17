@@ -1,4 +1,4 @@
-# Guide to setup conventional commits on commit
+# Guide to setup conventional commits in 3 steps.
 
 ## What does conventional commits do?
 
