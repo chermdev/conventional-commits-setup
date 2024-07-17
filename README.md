@@ -39,56 +39,9 @@ feat(auth): ✨ <description>
 
 ```
 
-## gitmoji
+### Conventional commit examples
 
-gitmoji: [gitmoji.dev](https://gitmoji.dev/)<br>
-
-![gitmoji](./images/gitmoji.png)
-
-Gitmoji is an initiative to standardize and explain the use of emojis on GitHub commit messages.
-
-Using emojis on commit messages provides an easy way of identifying the purpose or intention of a commit with only looking at the emojis used. As there are a lot of different emojis I found the need of creating a guide that can help to use emojis easier.
-
-## Commit types and recommended emojis
-
-| Commit Type | Title                    | Description                                                                                                 | Emoji |
-| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- | :---: |
-| `feat`      | Features                 | A new feature                                                                                               |  ✨   |
-| `fix`       | Bug Fixes                | A bug Fix                                                                                                   |  🐛   |
-| `docs`      | Documentation            | Documentation only changes                                                                                  |  📝   |
-| `style`     | Styles                   | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)      |  🎨   |
-| `refactor`  | Code Refactoring         | A code change that neither fixes a bug nor adds a feature                                                   |  ♻️   |
-| `perf`      | Performance Improvements | A code change that improves performance                                                                     |  ⚡   |
-| `test`      | Tests                    | Adding missing tests or correcting existing tests                                                           |  ✅   |
-| `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         |  📦️  |
-| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) |  👷   |
-| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           |  🔧   |
-| `revert`    | Reverts                  | Reverts a previous commit                                                                                   |  ⏪️  |
-
-### Other gitmojis
-
-| Emoji | Use case                                               |
-| ----- | ------------------------------------------------------ |
-| 🎉    | Begin a project.                                       |
-| 🚀    | Deploy stuff.                                          |
-| 💄    | Add or update the UI and style files.                  |
-| 🚑️   | Critical hotfix.                                       |
-| 🚧    | Work in progress.                                      |
-| 🔥    | Remove code or files.                                  |
-| 🔇    | Remove logs.                                           |
-| 🗑️    | Deprecate code that needs to be cleaned up.            |
-| ⚰️    | Remove dead code.                                      |
-| ➕    | Add dependency.                                        |
-| ➖    | Remove dependency.                                     |
-| 🚚    | Move or rename resources (e.g.: files, paths, routes). |
-| 🍱    | Add or update assets.                                  |
-| 💡    | Add or update comments in source code.                 |
-| 💫    | Add or update animations and transitions.              |
-| 🙈    | Add or update a .gitignore file.                       |
-
-## Conventional commit examples
-
-Good commits:
+#### Good commits
 
 ✅ _`chore: add shadcn package`_
 
@@ -125,7 +78,7 @@ Reviewed-by: Z
 Refs: #123
 ```
 
-Bad commits:
+#### Bad commits
 
 ❌ _`Add LOgin BUTTON`_
 
@@ -133,31 +86,54 @@ Bad commits:
 
 ❌ _`commit message that is too large to fit in one commit, this means that the commit has too many changes to describe and you should split it into multiple commits or you require to use a multi-paragraph body and/or footers.`_
 
-## ⭐ Recommendation: Install VSCode extension
+## gitmoji
 
-vscode extension: [vivaxy.vscode-conventional-commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)<br>
+gitmoji: [gitmoji.dev](https://gitmoji.dev/)<br>
 
-![vscode extension for conventional commits](./images/vscode-conventionalcommits.png)
+![gitmoji](./images/gitmoji.png)
 
-### How to use
+Gitmoji is an initiative to standardize and explain the use of emojis on GitHub commit messages.
 
-Once installed search for the _`Conventional Commits`_ command using:
+Using emojis on commit messages provides an easy way of identifying the purpose or intention of a commit with only looking at the emojis used. As there are a lot of different emojis I found the need of creating a guide that can help to use emojis easier.
 
-- Windows: `ctrl`+ `shift` + `p`
-- Mac: `command` + `shift` + `p`
+### Commit types and recommended emojis
 
-![conventional commits command](./images/command.png)
+| Commit Type | Title                    | Description                                                                                                 | Emoji |
+| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- | :---: |
+| `feat`      | Features                 | A new feature                                                                                               |  ✨   |
+| `fix`       | Bug Fixes                | A bug Fix                                                                                                   |  🐛   |
+| `docs`      | Documentation            | Documentation only changes                                                                                  |  📝   |
+| `style`     | Styles                   | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)      |  🎨   |
+| `refactor`  | Code Refactoring         | A code change that neither fixes a bug nor adds a feature                                                   |  ♻️   |
+| `perf`      | Performance Improvements | A code change that improves performance                                                                     |  ⚡   |
+| `test`      | Tests                    | Adding missing tests or correcting existing tests                                                           |  ✅   |
+| `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         |  📦️  |
+| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) |  👷   |
+| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           |  🔧   |
+| `revert`    | Reverts                  | Reverts a previous commit                                                                                   |  ⏪️  |
 
-This will open a menu to start creating your commit message selecting the options.
+### Other gitmojis
 
-![conventional commits command](./images/command-steps.png)
+| Emoji | Use case                                               |
+| ----- | ------------------------------------------------------ |
+| 🎉    | Begin a project.                                       |
+| 🚀    | Deploy stuff.                                          |
+| 💄    | Add or update the UI and style files.                  |
+| 🚑️   | Critical hotfix.                                       |
+| 🚧    | Work in progress.                                      |
+| 🔥    | Remove code or files.                                  |
+| 🔇    | Remove logs.                                           |
+| 🗑️    | Deprecate code that needs to be cleaned up.            |
+| ⚰️    | Remove dead code.                                      |
+| ➕    | Add dependency.                                        |
+| ➖    | Remove dependency.                                     |
+| 🚚    | Move or rename resources (e.g.: files, paths, routes). |
+| 🍱    | Add or update assets.                                  |
+| 💡    | Add or update comments in source code.                 |
+| 💫    | Add or update animations and transitions.              |
+| 🙈    | Add or update a .gitignore file.                       |
 
-**Optional:** disable autoCommit
-
-- The extension enables `conventionalCommits.autoCommit` by default, I recommend to disable it to only generate the formatted commit message.
-- It can be disabled from the option in `Settings > conventionalCommits.autoCommit`.
-
-## 🎉 Setup project in 3 steps
+## Setup project in 3 steps 🎉
 
 > Before starting, initialize a project if you dont have one with `npm init -y`.
 
@@ -220,6 +196,32 @@ module.exports = {
   extends: ["@commitlint/config-conventional"],
 };
 ```
+
+### ⭐ Recommendation: Install VSCode extension
+
+vscode extension: [vivaxy.vscode-conventional-commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)<br>
+
+![vscode extension for conventional commits](./images/vscode-conventionalcommits.png)
+
+To improve the developer experience I highly recommend installing this extension.
+
+#### How to use?
+
+Once installed, search for _`Conventional Commits`_ command with:
+
+- Windows: `ctrl`+ `shift` + `p`
+- Mac: `command` + `shift` + `p`
+
+![conventional commits command](./images/command.png)
+
+This will open a menu to start creating your commit message selecting the options.
+
+![conventional commits command](./images/command-steps.png)
+
+**Optional:** disable autoCommit
+
+- The extension enables `conventionalCommits.autoCommit` by default, I recommend to disable it to only generate the formatted commit message.
+- It can be disabled from the option in `Settings > conventionalCommits.autoCommit`.
 
 ## FAQ
 
