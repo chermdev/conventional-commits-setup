@@ -1,22 +1,22 @@
 # Guide to setup conventional commits on commit
 
-[TOC]
-
 ## What does conventional commits do?
 
 docs: [conventionalcommits.org](https://www.conventionalcommits.org)<br>
 
 ![conventional commits](./images/conventionalcommits.png)
 
-Validates the commit message format locally before pushing changes:
+Lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
 
-Why Use Conventional Commits
+### Why Use Conventional Commits
 
 - Automatically generating CHANGELOGs.
 - Automatically determining a semantic version bump (based on the types of commits landed).
 - Communicating the nature of changes to teammates, the public and other stakeholders.
 - Triggering build and publish processes.
 - Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
+
+### Commit message structure
 
 The commit message should be structured as follows:
 
@@ -45,7 +45,48 @@ gitmoji: [gitmoji.dev](https://gitmoji.dev/)<br>
 
 ![gitmoji](./images/gitmoji.png)
 
-## Examples
+Gitmoji is an initiative to standardize and explain the use of emojis on GitHub commit messages.
+
+Using emojis on commit messages provides an easy way of identifying the purpose or intention of a commit with only looking at the emojis used. As there are a lot of different emojis I found the need of creating a guide that can help to use emojis easier.
+
+## Commit types and recommended emojis
+
+| Commit Type | Title                    | Description                                                                                                 | Emoji |
+| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- | :---: |
+| `feat`      | Features                 | A new feature                                                                                               |  ✨   |
+| `fix`       | Bug Fixes                | A bug Fix                                                                                                   |  🐛   |
+| `docs`      | Documentation            | Documentation only changes                                                                                  |  📝   |
+| `style`     | Styles                   | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)      |  🎨   |
+| `refactor`  | Code Refactoring         | A code change that neither fixes a bug nor adds a feature                                                   |  ♻️   |
+| `perf`      | Performance Improvements | A code change that improves performance                                                                     |  ⚡   |
+| `test`      | Tests                    | Adding missing tests or correcting existing tests                                                           |  ✅   |
+| `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         |  📦️  |
+| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) |  👷   |
+| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           |  🔧   |
+| `revert`    | Reverts                  | Reverts a previous commit                                                                                   |  ⏪️  |
+
+### Other gitmojis
+
+| Emoji | Use case                                               |
+| ----- | ------------------------------------------------------ |
+| 🎉    | Begin a project.                                       |
+| 🚀    | Deploy stuff.                                          |
+| 💄    | Add or update the UI and style files.                  |
+| 🚑️   | Critical hotfix.                                       |
+| 🚧    | Work in progress.                                      |
+| 🔥    | Remove code or files.                                  |
+| 🔇    | Remove logs.                                           |
+| 🗑️    | Deprecate code that needs to be cleaned up.            |
+| ⚰️    | Remove dead code.                                      |
+| ➕    | Add dependency.                                        |
+| ➖    | Remove dependency.                                     |
+| 🚚    | Move or rename resources (e.g.: files, paths, routes). |
+| 🍱    | Add or update assets.                                  |
+| 💡    | Add or update comments in source code.                 |
+| 💫    | Add or update animations and transitions.              |
+| 🙈    | Add or update a .gitignore file.                       |
+
+## Conventional commit examples
 
 Good commits:
 
@@ -98,30 +139,51 @@ vscode extension: [vivaxy.vscode-conventional-commits](https://marketplace.visua
 
 ![vscode extension for conventional commits](./images/vscode-conventionalcommits.png)
 
-To improve your experience creating a commit message.
+### How to use
+
+Once installed search for the _`Conventional Commits`_ command using:
+
+- Windows: `ctrl`+ `shift` + `p`
+- Mac: `command` + `shift` + `p`
+
+![conventional commits command](./images/command.png)
+
+This will open a menu to start creating your commit message selecting the options.
+
+![conventional commits command](./images/command-steps.png)
 
 **Optional:** disable autoCommit
 
 - The extension enables `conventionalCommits.autoCommit` by default, I recommend to disable it to only generate the formatted commit message.
 - It can be disabled from the option in `Settings > conventionalCommits.autoCommit`.
 
-## 🎉 Setup project
+## 🎉 Setup project in 3 steps
 
-1. Init a new project (skip if you already have one)
+> Before starting, initialize a project if you dont have one with `npm init -y`.
 
-```bash
-npm init -y
-```
+### npm:
 
-2. install dev dependencies
+1. install dev dependencies.
 
 ```bash
-npm install --save-dev @commitlint/cli @commitlint/config-conventional
+npm i -D husky @commitlint/cli @commitlint/config-conventional
 ```
 
-3. add a new file at root `commitlint.config.js`
+2. Create .husky folder with commit message hook.
 
-**commitlint.config.js**
+```bash
+npm pkg set scripts.prepare="husky"
+npm run prepare
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+3. Configure commitlint to use conventional config.
+
+```bash
+echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+```
+
+this will create **commitlint.config.js**:
 
 ```javascript
 module.exports = {
@@ -129,21 +191,35 @@ module.exports = {
 };
 ```
 
-4. Install husky as dev dependency
+### pnpm:
 
-   `npm i -D husky`
+1. install dev dependencies.
 
-5. add script `prepare="husky"` in `packages.json`
+```bash
+pnpm add -D husky @commitlint/cli @commitlint/config-conventional
+```
 
-   `npm pkg set scripts.prepare="husky"`
+2. Create .husky folder with commit message hook.
 
-6. Execute prepare, this will create the .husky folder
+```bash
+pnpm pkg set scripts.prepare="husky"
+pnpm run prepare
+echo "pnpm dlx commitlint --edit \$1" > .husky/commit-msg
+```
 
-   `npm run prepare`
+3. Configure commitlint to use conventional config.
 
-7. Add hook commit message
+```bash
+echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+```
 
-   `echo "npx --no -- commitlint --edit ${1}" > .husky/commit-msg`
+this will create **commitlint.config.js**:
+
+```javascript
+module.exports = {
+  extends: ["@commitlint/config-conventional"],
+};
+```
 
 ## FAQ
 
