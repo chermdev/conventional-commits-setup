@@ -150,7 +150,7 @@ npm i -D husky @commitlint/cli @commitlint/config-conventional
 ```bash
 npm pkg set scripts.prepare="husky"
 npm run prepare
-echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+echo "npx --no -- commitlint --edit ${1}" > .husky/commit-msg
 ```
 
 3. Configure commitlint to use conventional config.
@@ -182,7 +182,7 @@ pnpm add -D husky @commitlint/cli @commitlint/config-conventional
 ```bash
 pnpm pkg set scripts.prepare="husky"
 pnpm run prepare
-echo "pnpm dlx commitlint --edit \$1" > .husky/commit-msg
+echo "pnpm dlx commitlint --edit ${1}" > .husky/commit-msg
 ```
 
 3. Configure commitlint to use conventional config.
